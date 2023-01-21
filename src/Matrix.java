@@ -1,8 +1,6 @@
-import edu.princeton.cs.algs4.StdOut;
-
-public class Main {
+public class Matrix {
     public static void main(String[] args) {
-        drawMatrix(new int[][]{
+/*        drawMatrix(new int[][]{
                 {1,29,93,44},
                 {45,23,35,61},
                 {45,62,33,11},
@@ -14,11 +12,30 @@ public class Main {
                 {45,23,35,61},
                 {45,62,33,11},
                 {45,82,5,13},
-        }));
+        }));*/
 
-
+        System.out.print(lg(10));
     }
 
+    public static float lg(int N) {
+        int c = 0;
+
+        while(power(2, c) < N) {
+            c++;
+        }
+        c -= 1;
+
+        return c;
+    }
+
+    public static int power(int a, int b) {
+        int pow = 1;
+        for( int i = 0; i < b; i++) {
+            pow *= a;
+        }
+
+        return pow;
+    }
     public static int[][] matrixTransposition(int[][] matrix) {
         int [][] newMatrix = new int[matrix[0].length][matrix.length];
         for(int row = 0; row < matrix.length; row++)
