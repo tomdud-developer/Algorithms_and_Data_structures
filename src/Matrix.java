@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Matrix {
     public static void main(String[] args) {
 /*        drawMatrix(new int[][]{
@@ -14,7 +16,38 @@ public class Matrix {
                 {45,82,5,13},
         }));*/
 
-        System.out.print(lg(10));
+        testFibonacci();
+        //System.out.print(Fibonacci(100));
+    }
+
+    //zad 1.1.20 ln(N!)
+    public static long lnNToFactorial() {
+
+    }
+
+    public static void testFibonacci() {
+        ArrayList<Long> numbers = new ArrayList<>();
+        long i = 0;
+        while(true) {
+            Long num = Fibonacci(i, numbers);
+            numbers.add(num);
+            System.out.printf("i=%d, %d\n", i, num);
+            i++;
+        }
+    }
+
+    public static long Fibonacci(long N, ArrayList<Long> numbers) {
+        try {
+            return numbers.get((int)N);
+        } catch (IndexOutOfBoundsException ignored) {}
+        if(N == 0) return 0L;
+        if(N == 1) return 1L;
+        return Fibonacci(N - 1, numbers) + Fibonacci(N - 2, numbers);
+    }
+    //Zad 1.1.16
+    public static String exR1(int n) {
+        if( n <= 0) return "";
+        return exR1(n - 3) + n + exR1(n - 2) + n;
     }
 
     public static float lg(int N) {
