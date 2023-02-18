@@ -20,11 +20,6 @@ public class Matrix {
         //System.out.print(Fibonacci(100));
     }
 
-    //zad 1.1.20 ln(N!)
-    public static long lnNToFactorial() {
-
-    }
-
     public static void testFibonacci() {
         ArrayList<Long> numbers = new ArrayList<>();
         long i = 0;
